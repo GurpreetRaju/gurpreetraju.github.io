@@ -1,0 +1,12 @@
+﻿.entry-content ::deep .mud-list-item-icon {
+    align-self:start;
+    margin-top: 0.2rem;
+}
+
+.entry-content ::deep .mud-icon-button{
+    height: fit-content;
+}
+
+.entry-content ::deep > div {
+    align-items: center;
+}
