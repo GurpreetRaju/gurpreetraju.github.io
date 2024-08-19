@@ -84,3 +84,11 @@ code {
 .text-bold {
     font-weight: bold;
 }
+
+@media (min-width: 960px) {
+    .my-picture {
+        width: 50% !important;
+        aspect-ratio: 1 / 1;
+        height: auto !important;
+    }
+}

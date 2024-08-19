@@ -1,5 +1,29 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
-
-<h1>Welcome!</h1>
+<MyPage Title="Home">
+    <MudCard>
+        <MudCardHeader>
+            <MudText Typo="Typo.h5">About</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText>Greetings! I'm a technology enthusiast with over 7 years of hands-on experience in software development. Throughout my career, I've successfully delivered a variety of projects, showcasing my creativity and strong problem-solving skills.</MudText>
+            <MudText>I thrive on challenges and stay at the forefront of technology. My skill set includes a range of technologies and frameworks, such as C#, .NET, Blazor, ASP.Net, gRPC, Angular, JavaScript, HTML, Java, and CSS. I'm well-versed in software design methodologies, design patterns, and comfortable working across Linux, Unix, and Windows platforms. My proficiency extends to Kubernetes, Docker, Redis, Kafka, Git and REST API.</MudText>
+            <MudText>You can explore some of my freelance and academic projects on my <MudLink Href="https://www.github.com/gurpreetraju">GitHub account</MudLink>.</MudText>
+            <MudText>I'm always excited about collaborating with talented and creative professionals. Let's join forces, leverage our knowledge and skills, and create something truly wonderful together.</MudText>
+        </MudCardContent>
+    </MudCard>
+    <MudCard Class="mt-3">
+        <MudCardHeader>
+            <MudText Typo="Typo.h5">Top Skills</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudChipSet T="string">
+                <MudChip T="string">.Net</MudChip>
+                <MudChip T="string">C#</MudChip>
+                <MudChip T="string">Blazor</MudChip>
+                <MudChip T="string">Angular</MudChip>
+                <MudChip T="string">JavaScript</MudChip>
+            </MudChipSet>
+        </MudCardContent>
+    </MudCard>
+</MyPage>
