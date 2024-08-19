@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GurpreetRaju",
   "resources": {
-    "hash": "sha256-zz2NMbdjBvacjSaGZonDaQQIiveU0X8guuLViecKMXo=",
+    "hash": "sha256-F5xb+EjSWh8Qv7v1RsIjyj4GLpgMsfVBhMONTedEpU0=",
     "jsModuleNative": {
       "dotnet.native.8.0.3.bcpiwfovvl.js": "sha256-D4sYBYmDfH/YekgYRgX959/2RG6k28sJSHmcsn+iikk="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "GurpreetRaju.wasm": "sha256-+MEGip3I6Kr2ar+H/O0XoOEUuXyDZM4TslNcQXfResk=",
+      "GurpreetRaju.wasm": "sha256-Efk0BfDavT49A/zryk9kFXe0Vb/CGf38InhJX8x8eeE=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-otaHVV+wNUYShtezT2jeFxqJpzzpltizjuPLy6ZDFSA=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-ZTWuS8ZqAXShtrmwex2k8NX2TQBv9K8UZYTgEYYAFYM=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-VJ+Sq+qxiMKTb7kfwbzD3a+SmN9i7qDgzYFmT5xMFdI=",
@@ -35,7 +35,7 @@
       "Microsoft.Extensions.Primitives.wasm": "sha256-Ms2HR5Gpug/0uRAzdk4SUNT76Ml3CjFv9Jo+dUIMGac=",
       "Microsoft.JSInterop.wasm": "sha256-Zf9aEUyIbFr0zhEm1l0Qegf0X6syx4UnSYhzv0lI5SA=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-Kr13V+6zGL8rPvFmuBAsaEJfoMlR4Q8keJHKaVGVbGA=",
-      "MudBlazor.wasm": "sha256-t1FDkR2YNaOLxLQpgfpws/yRFYzgnQ4s1FXMHbZGh0o=",
+      "MudBlazor.wasm": "sha256-KqbGE4KcUdUPWDBKoFvyPxx+kCyJ3vCtJYnJbrWM5uk=",
       "System.Collections.Concurrent.wasm": "sha256-PT2pzKD1niClDirbPkJzt+c/i+4xuZ326yT184iVvd0=",
       "System.Collections.Immutable.wasm": "sha256-vN1TOad7imVE/vzWsQ8u7mcmJ8rgoF9aUuR1VHFr5IQ=",
       "System.Collections.wasm": "sha256-B6A+as9P1komX+PhJUxRtXDAkR6QT9qw/GhcHDE1yBg=",
