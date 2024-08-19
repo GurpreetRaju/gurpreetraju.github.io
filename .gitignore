@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/GurpreetRaju/.vs
+/GurpreetRaju/bin
+/GurpreetRaju/obj
