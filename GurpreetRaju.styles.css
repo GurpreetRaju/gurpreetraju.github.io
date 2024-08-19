@@ -4,6 +4,19 @@
     padding: 1rem;
     background: var(--mud-palette-background);
 }
+/* /Components/TimelineEntry.razor.rz.scp.css */
+.entry-content[b-uwop738mwm]  .mud-list-item-icon {
+    align-self:start;
+    margin-top: 0.2rem;
+}
+
+.entry-content[b-uwop738mwm]  .mud-icon-button{
+    height: fit-content;
+}
+
+.entry-content[b-uwop738mwm]  > div {
+    align-items: center;
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-1yunzg426u] {
     position: relative;
