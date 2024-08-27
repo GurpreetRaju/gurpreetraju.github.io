@@ -1,7 +1,7 @@
 ﻿@using MudBlazor
 @inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider @ref="_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
 <MudPopoverProvider />
 <MudSnackbarProvider />
 
@@ -24,6 +24,14 @@
             </MudAvatar>
         </MudStack>
         <NavMenu @bind-CurrentPage="_currentPage" />
+        <MudSpacer />
+        <div class="d-flex justify-center">
+            <MudToggleIconButton Toggled="_isDarkMode" ToggledChanged="HandleThemeChanged" Size="Size.Small"
+                                 Color="Color.Primary" Variant="Variant.Text"
+                                 Icon="@Icons.Material.Filled.LightMode"
+                                 ToggledIcon="@Icons.Material.Filled.DarkMode"
+                                 Class="ma-4" />
+        </div>
     </MudDrawer>
     <MudMainContent Class="pt-0">
         @Body
@@ -31,12 +39,32 @@
 </MudLayout>
 
 @code{
+    private bool _isDarkMode = false;
     private bool _drawerOpen = true;
 
-    private string _currentPage;
+    private GurpreetTheme _theme = new();
+    private MudThemeProvider _mudThemeProvider;
+
+    private string _currentPage; 
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _isDarkMode = await _mudThemeProvider.GetSystemPreference();
+            await InvokeAsync(StateHasChanged);
+        }
+    }
 
     void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
+    }
+
+    void HandleThemeChanged(bool isDark)
+    {
+        _isDarkMode = isDark;
+
+        InvokeAsync(StateHasChanged);
     }
 }

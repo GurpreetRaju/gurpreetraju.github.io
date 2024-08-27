@@ -1,0 +1,23 @@
+﻿
+.skill-card{
+    position: relative;
+    overflow:hidden;
+    height: 7rem;
+    width: 6rem;
+}
+
+    .skill-card ::deep .mud-card {
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+    }
+
+.skill-card ::deep .skill-image {
+    width: 3rem;
+    aspect-ratio: 1;
+}
+
+.skill-card:hover ::deep .skill-image {
+    width: 3.5rem;
+    margin-top: -0.5rem;
+}

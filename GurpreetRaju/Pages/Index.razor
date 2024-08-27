@@ -3,7 +3,7 @@
 <MyPage Title="Home">
     <MudCard>
         <MudCardHeader>
-            <MudText Typo="Typo.h5">About</MudText>
+            <MudText Typo="Typo.h5"><MudIcon Icon="@Icons.Material.Filled.PermIdentity" Class="mr-3" Size="Size.Small" />About</MudText>
         </MudCardHeader>
         <MudCardContent>
             <MudText>Greetings! I'm a technology enthusiast with over 7 years of hands-on experience in software development. Throughout my career, I've successfully delivered a variety of projects, showcasing my creativity and strong problem-solving skills.</MudText>
@@ -14,16 +14,31 @@
     </MudCard>
     <MudCard Class="mt-3">
         <MudCardHeader>
-            <MudText Typo="Typo.h5">Top Skills</MudText>
+            <MudText Typo="Typo.h5"><MudIcon Icon="@Icons.Material.Filled.Build" Class="mr-3" Size="Size.Small"/>Technical Skills</MudText>
         </MudCardHeader>
         <MudCardContent>
-            <MudChipSet T="string">
-                <MudChip T="string">.Net</MudChip>
-                <MudChip T="string">C#</MudChip>
-                <MudChip T="string">Blazor</MudChip>
-                <MudChip T="string">Angular</MudChip>
-                <MudChip T="string">JavaScript</MudChip>
+            <MudStack Row="true">
+                <SkillCard Image="images/Skills/logo_net_core.png" Skill=".Net" />
+                <SkillCard Image="images/Skills/logo_asp.png" Skill="ASP.Net" />
+                <SkillCard Image="images/Skills/logo_c_sharp.png" Skill="C#" />
+                <SkillCard Image="images/Skills/logo_blazor.png" Skill="Blazor" />
+                <SkillCard Image="images/Skills/logo_angular.png" Skill="Angular" />
+                <SkillCard Image="images/Skills/logo_js.png" Skill="JavaScript" />
+                <SkillCard Image="images/Skills/logo_sql.png" Skill="SQL" />
+                <SkillCard Image="images/Skills/logo_azure.png" Skill="Azure" />
+                <SkillCard Image="images/Skills/logo_docker.png" Skill="Docker" />
+                <SkillCard Image="images/Skills/logo_kubernetes.png" Skill="Kubernetes" />
+            </MudStack>
+            <MudChipSet T="string" Class="mt-3">
+                @foreach (var skill in Skills)
+                {
+                    <MudChip Color="Color.Primary" Variant="Variant.Filled">@skill</MudChip>
+                }
             </MudChipSet>
         </MudCardContent>
     </MudCard>
 </MyPage>
+
+@code {
+    private string[] Skills = ["Problem-Solving", "Design Patterns", "HTML", "CSS", "REST", "GIT", "gRPC", "Linux", "Windows"];
+}

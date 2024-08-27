@@ -1,0 +1,20 @@
+﻿
+<div class="skill-card">
+    <MudCard Outlined="true">
+        <MudCardContent>
+            <MudStack Spacing="1" Justify="Justify.Center" AlignItems="AlignItems.Center">
+                <MudImage Src="@Image" Alt="@Skill" Class="skill-image transition-ease-in" />
+                <MudText>@Skill</MudText>
+            </MudStack>
+        </MudCardContent>
+    </MudCard>
+</div>
+
+@code {
+
+    [Parameter]
+    public string Image { get; set; }
+
+    [Parameter]
+    public string Skill { get; set; }
+}
