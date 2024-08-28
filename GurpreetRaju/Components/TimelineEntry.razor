@@ -11,38 +11,42 @@
     <ItemContent>
         <MudPaper>
             <div class="entry-content">
-            <MudStack Row="true" Class="pa-3">
-                <MudAvatar Variant="Variant.Outlined" Size="Size.Large" Elevation="1">
-                    <MudImage Src="@Image" Alt="@Title" />
-                </MudAvatar>
-                <MudStack Spacing="1">
-                    <MudText Typo="Typo.body1" Class="text-bold">@Title</MudText>
-                    <MudText Typo="Typo.body2">@Institute</MudText>
-                    <MudText Typo="Typo.caption">@Location</MudText>
+                <MudStack Row="true" Class="pa-3">
+                    <MudAvatar Variant="Variant.Outlined" Size="Size.Large" Elevation="1">
+                        <MudImage Src="@Image" Alt="@Title" />
+                    </MudAvatar>
+                    <MudStack Spacing="1">
+                        @if (!AlternateTimeline)
+                        {
+                            <MudText Typo="Typo.caption">@Duration</MudText>
+                        }
+                        <MudText Typo="Typo.body1" Class="text-bold">@Title</MudText>
+                        <MudText Typo="Typo.body2">@Institute</MudText>
+                        <MudText Typo="Typo.caption">@Location</MudText>
+                    </MudStack>
+                    <MudSpacer />
+                    @if (Details != null)
+                    {
+                        <MudIconButton Icon="@(_expanded ? Icons.Material.Filled.ExpandLess : Icons.Material.Filled.ExpandMore)"
+                                       OnClick="() => _expanded = !_expanded"
+                                       Variant="Variant.Outlined" Color="Color.Info" />
+                    }
                 </MudStack>
-                <MudSpacer />
+                @ChildContent
                 @if (Details != null)
                 {
-                    <MudIconButton Icon="@(_expanded ? Icons.Material.Filled.ExpandLess : Icons.Material.Filled.ExpandMore)"
-                                   OnClick="() => _expanded = !_expanded"
-                                   Variant="Variant.Outlined" Color="Color.Info"/>
+                    <MudCollapse Expanded="_expanded" Class="blue lighten-5 black-text">
+                        <div class="pa-3">
+                            <MudText Typo="Typo.h6">Responsibilities</MudText>
+                            <MudList Dense="true" T="string">
+                                @foreach (var detail in Details)
+                                {
+                                    <MudListItem Icon="@MudBlazor.Icons.Material.Filled.ArrowRightAlt" IconSize="Size.Small" Text="@detail" />
+                                }
+                            </MudList>
+                        </div>
+                    </MudCollapse>
                 }
-            </MudStack>
-            @ChildContent
-            @if (Details != null)
-            {
-                <MudCollapse Expanded="_expanded" Class="blue lighten-5 black-text">
-                    <div class="pa-3">
-                        <MudText Typo="Typo.h6">Responsibilities</MudText>
-                        <MudList Dense="true" T="string">
-                            @foreach (var detail in Details)
-                            {
-                                <MudListItem Icon="@MudBlazor.Icons.Material.Filled.ArrowRightAlt" IconSize="Size.Small" Text="@detail" />
-                            }
-                        </MudList>
-                    </div>
-                </MudCollapse>
-            }
             </div>
         </MudPaper>
     </ItemContent>
@@ -61,13 +65,13 @@
     /// The institute.
     /// </summary>
     [Parameter]
-    public string Institute{ get; set; }
+    public string Institute { get; set; }
 
     /// <summary>
     /// The location.
     /// </summary>
     [Parameter]
-    public string Location{ get; set; }
+    public string Location { get; set; }
 
     /// <summary>
     /// Image source.
@@ -86,6 +90,12 @@
     /// </summary>
     [Parameter]
     public string[] Details { get; set; }
+
+    /// <summary>
+    /// Show alternate timeline entry.
+    /// </summary>
+    [Parameter]
+    public bool AlternateTimeline { get; set; }
 
     /// <summary>
     /// The child content.

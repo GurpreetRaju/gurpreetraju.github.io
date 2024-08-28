@@ -1,7 +1,12 @@
-﻿namespace GurpreetRaju.Pages
+﻿using Microsoft.AspNetCore.Components;
+using MudBlazor;
+
+namespace GurpreetRaju.Pages
 {
     public partial class Experience
     {
+        private bool _showAlternateTimelime;
+
         private ExperienceEntry[] _experiences = [
             new ExperienceEntry {
                 Role = "Senior Software Developer",
@@ -110,6 +115,22 @@
             },            
         ];
 
+
+
+
+        [CascadingParameter]
+        public Breakpoint Breakpoint { get; set; }
+
+        [Inject]
+        private IBrowserViewportService BrowserViewportService { get; set; }
+
+        /// <inheritdoc/>
+        protected override async Task OnParametersSetAsync()
+        {
+            await base.OnParametersSetAsync();
+
+            _showAlternateTimelime = await BrowserViewportService.IsBreakpointWithinReferenceSizeAsync(Breakpoint.SmAndUp, Breakpoint);
+        }
 
         private string GetDuration(ExperienceEntry experience)
         {

@@ -1,15 +1,16 @@
 ﻿@page "/experience"
 
 <MyPage Title="Experience">
-    <MudTimeline>
+    <MudTimeline TimelinePosition="@(_showAlternateTimelime ? TimelinePosition.Alternate : TimelinePosition.Start)">
         @foreach (var experience in _experiences)
         {
-            <TimelineEntry Duration="@GetDuration(experience)"
-                            Title="@experience.Role"
-                            Image="@experience.LogoImage"
-                            Institute="@experience.Company"
-                            Location="@experience.Location" 
-                            Details="@experience.Responsibilities">
+            <TimelineEntry AlternateTimeline="_showAlternateTimelime" 
+                           Duration="@GetDuration(experience)"
+                           Title="@experience.Role"
+                           Image="@experience.LogoImage"
+                           Institute="@experience.Company"
+                           Location="@experience.Location"
+                           Details="@experience.Responsibilities">
             </TimelineEntry>
         }
     </MudTimeline>

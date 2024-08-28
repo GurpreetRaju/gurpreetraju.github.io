@@ -34,7 +34,9 @@
         </div>
     </MudDrawer>
     <MudMainContent Class="pt-0">
-        @Body
+        <MudBreakpointProvider>
+            @Body
+        </MudBreakpointProvider>
     </MudMainContent>
 </MudLayout>
 
