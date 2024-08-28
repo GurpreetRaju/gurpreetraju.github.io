@@ -3,6 +3,9 @@ using MudBlazor;
 
 namespace GurpreetRaju.Pages
 {
+    /// <summary>
+    /// Code behind file for <see cref="Experience"/>.
+    /// </summary>
     public partial class Experience
     {
         private bool _showAlternateTimelime;
@@ -115,12 +118,15 @@ namespace GurpreetRaju.Pages
             },            
         ];
 
-
-
-
+        /// <summary>
+        /// The current breakpoint.
+        /// </summary>
         [CascadingParameter]
         public Breakpoint Breakpoint { get; set; }
 
+        /// <summary>
+        /// The browser viewport service reference.
+        /// </summary>
         [Inject]
         private IBrowserViewportService BrowserViewportService { get; set; }
 
@@ -132,6 +138,11 @@ namespace GurpreetRaju.Pages
             _showAlternateTimelime = await BrowserViewportService.IsBreakpointWithinReferenceSizeAsync(Breakpoint.SmAndUp, Breakpoint);
         }
 
+        /// <summary>
+        /// Gets the duration range for a job/internship experience.
+        /// </summary>
+        /// <param name="experience">The experience entry.</param>
+        /// <returns></returns>
         private string GetDuration(ExperienceEntry experience)
         {
             string timeDuration = string.Empty;
@@ -148,20 +159,44 @@ namespace GurpreetRaju.Pages
         }
     }
 
+    /// <summary>
+    /// Represents an experience for a job or internship.
+    /// </summary>
     public class ExperienceEntry
     {
+        /// <summary>
+        /// The start date.
+        /// </summary>
         public DateTime? StartDate { get; set; }
 
+        /// <summary>
+        /// The end date.
+        /// </summary>
         public DateTime? EndDate { get; set; }
 
+        /// <summary>
+        /// The job role.
+        /// </summary>
         public string Role { get; set; }
 
+        /// <summary>
+        /// The company.
+        /// </summary>
         public string Company { get; set; }
 
+        /// <summary>
+        /// The location.
+        /// </summary>
         public string Location { get; set; }
 
+        /// <summary>
+        /// The company logo image address.
+        /// </summary>
         public string LogoImage { get; set; }
 
+        /// <summary>
+        /// The job responsibilities.
+        /// </summary>
         public string[] Responsibilities { get; set; }
     }
 }

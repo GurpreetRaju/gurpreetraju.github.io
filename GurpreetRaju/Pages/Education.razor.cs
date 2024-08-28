@@ -3,6 +3,9 @@ using MudBlazor;
 
 namespace GurpreetRaju.Pages
 {
+    /// <summary>
+    /// Code behind-file for <see cref="Education"/>.
+    /// </summary>
     public partial class Education
     {
         private bool _showAlternateTimelime = true;
@@ -34,13 +37,19 @@ namespace GurpreetRaju.Pages
             }
         ];
 
-
+        /// <summary>
+        /// Current breakpoint.
+        /// </summary>
         [CascadingParameter]
         public Breakpoint Breakpoint { get; set; }
 
+        /// <summary>
+        /// The browser viewport service.
+        /// </summary>
         [Inject]
         private IBrowserViewportService BrowserViewportService { get; set; }
 
+        /// <inheritdoc/>
         protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
@@ -58,6 +67,11 @@ namespace GurpreetRaju.Pages
             return BrowserViewportService.IsBreakpointWithinReferenceSizeAsync(breakpoint, Breakpoint);
         }
 
+        /// <summary>
+        /// Gets the duration range for an education entry.
+        /// </summary>
+        /// <param name="education">The education entry.</param>
+        /// <returns></returns>
         private string GetDuration(EducationEntry education)
         {
             string timeDuration = string.Empty;
@@ -73,6 +87,9 @@ namespace GurpreetRaju.Pages
             return timeDuration;
         }
 
+        /// <summary>
+        /// Represents an education.
+        /// </summary>
         private class EducationEntry
         {
 
