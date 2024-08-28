@@ -1,0 +1,58 @@
+﻿
+
+.animate-360-ease-in:hover {
+    -webkit-animation: spin 0.5s ease-in;
+    -moz-animation: spin 0.5s ease-in;
+    animation: spin 0.5s ease-in;
+}
+
+.transition-ease-in {
+    -webkit-transition: 0.1s ease-in;
+    -moz-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+}
+
+.grayscale {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+/* Size - Increase */
+@-moz-keyframes zoom-in {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes zoom-in {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes zoom-in {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* Spin */
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

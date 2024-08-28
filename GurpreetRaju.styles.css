@@ -4,6 +4,30 @@
     padding: 1rem;
     background: var(--mud-palette-background);
 }
+/* /Components/SkillCard.razor.rz.scp.css */
+
+.skill-card[b-uoc0fvtluc]{
+    position: relative;
+    overflow:hidden;
+    height: 7rem;
+    width: 6rem;
+}
+
+    .skill-card[b-uoc0fvtluc]  .mud-card {
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+    }
+
+.skill-card[b-uoc0fvtluc]  .skill-image {
+    width: 3rem;
+    aspect-ratio: 1;
+}
+
+.skill-card:hover[b-uoc0fvtluc]  .skill-image {
+    width: 3.5rem;
+    margin-top: -0.5rem;
+}
 /* /Components/TimelineEntry.razor.rz.scp.css */
 .entry-content[b-uwop738mwm]  .mud-list-item-icon {
     align-self:start;
