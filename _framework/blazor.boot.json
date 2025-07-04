@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GurpreetRaju",
   "resources": {
-    "hash": "sha256-fNLoy8+dfw82SWsOFCvU6GcWdE4WHCAdNJmt82o/OAA=",
+    "hash": "sha256-8qT1Iivn9N1lE8KRWe+3oep2jyePBiEIz87QFbyw6fY=",
     "fingerprinting": {
       "Markdig.82zk74d1io.wasm": "Markdig.wasm",
       "System.Net.Http.Formatting.y32kbdw4yp.wasm": "System.Net.Http.Formatting.wasm",
@@ -68,7 +68,7 @@
       "System.cunp5qiwjj.wasm": "System.wasm",
       "netstandard.cvsbdg5e1k.wasm": "netstandard.wasm",
       "System.Private.CoreLib.qo69zbt2qo.wasm": "System.Private.CoreLib.wasm",
-      "GurpreetRaju.x9tb19c8i2.wasm": "GurpreetRaju.wasm",
+      "GurpreetRaju.59yhc9a7z2.wasm": "GurpreetRaju.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.rtblh4npr3.js": "dotnet.native.js",
       "dotnet.native.aqhezbunpl.wasm": "dotnet.native.wasm",
@@ -159,7 +159,7 @@
       "System.Xml.Linq.464ny307vp.wasm": "sha256-JH2xrHoPze3JMRfEdHB+v49DP2GBYXfK1SHBHjP/fL4=",
       "System.cunp5qiwjj.wasm": "sha256-DM5iEENhrifGKn33Y7cqRzxC0OtHXYOKO13icwIazj8=",
       "netstandard.cvsbdg5e1k.wasm": "sha256-6KPTDiAJm7JE9ZqnoxQprn8QIcsq8IkBVkFf/EiWtcM=",
-      "GurpreetRaju.x9tb19c8i2.wasm": "sha256-C3Lda+YhSB6AuaNjaIvIw9i+rl+Hpg5pfGvjW4BVuaE="
+      "GurpreetRaju.59yhc9a7z2.wasm": "sha256-V4iaAuIaf+TbMSEA/H+iNa+kEYzDOmwJA6np6xeN8Ho="
     }
   },
   "cacheBootResources": true,
