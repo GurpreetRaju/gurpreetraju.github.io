@@ -2,7 +2,7 @@ name: Deploy Blazor to GitHub Pages
 
 on:
   push:
-  tags:
+    tags:
       - 'v*'  # matches v1, v1.0.0, v2.1.5, etc.
 
 jobs:
