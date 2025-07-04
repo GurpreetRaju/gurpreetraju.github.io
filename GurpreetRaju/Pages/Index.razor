@@ -18,7 +18,7 @@
             @foreach (var skill in Skills)
             {
                 <div class="skill-item">
-                    <img src="images/skills/@skill.Image" alt="@skill.Name" class="skill-icon" />
+                    <img src="@skill.Image" alt="@skill.Name" class="skill-icon" />
                     <Text Class="skill-label">@skill.Name</Text>
                 </div>
             }
@@ -63,16 +63,16 @@
 
 @code {
     private (string Name, string Image)[] Skills = [
-        (".NET", "logo_net_core.png"),
-        ("ASP.Net", "logo_asp.png"),
-        ("C#", "logo_c_sharp.png"),
-        ("Blazor", "logo_blazor.png"),
-        ("Angular", "logo_angular.png"),
-        ("JavaScript", "logo_js.png"),
-        ("SQL", "logo_sql.png"),
-        ("Azure", "logo_azure.png"),
-        ("Docker", "logo_docker.png"),
-        ("Kubernetes", "logo_kubernetes.png")
+        (".NET", "images/Skills/logo_net_core.png"),
+        ("ASP.Net", "images/Skills/logo_asp.png"),
+        ("C#", "images/Skills/logo_c_sharp.png"),
+        ("Blazor", "images/Skills/logo_blazor.png"),
+        ("Angular", "images/Skills/logo_angular.png"),
+        ("JavaScript", "images/Skills/logo_js.png"),
+        ("SQL", "images/Skills/logo_sql.png"),
+        ("Azure", "images/Skills/logo_azure.png"),
+        ("Docker", "images/Skills/logo_docker.png"),
+        ("Kubernetes", "images/Skills/logo_kubernetes.png")
     ];
 
     private string[] SoftSkills = [
