@@ -1,0 +1,54 @@
+﻿<div class="project-wrapper">
+    <div class="project-card" style="@CardBackgroundColor">
+        <div class="card-image">
+            <img src="@Image" alt="@Title" class="img-fluid"/>
+        </div>
+        <Text Typo="Typography.h4" Class="title">@Title</Text>
+        <div class="key-features">
+            <div class="soft-skills">
+                @foreach (var skill in Skills)
+                {
+                    <div class="soft-skill-pill chip">@skill</div>
+                }
+            </div>
+        </div>
+        <div class="links">
+            @Actions
+        </div>
+    </div>
+</div>
+
+@code {
+
+    /// <summary>
+    /// The image source.
+    /// </summary>
+    [Parameter]
+    public string Image { get; set; }
+
+    /// <summary>
+    /// The HSL color code for Image Background.
+    /// </summary>
+    [Parameter]
+    public string ImageBgHslColor { get; set; }
+
+    /// <summary>
+    /// The title.
+    /// </summary>
+    [Parameter]
+    public string Title { get; set; }
+
+    /// <summary>
+    /// The key skills list.
+    /// </summary>
+    [Parameter]
+    public IEnumerable<string> Skills { get; set; }
+
+    /// <summary>
+    /// The actions.
+    /// </summary>
+    [Parameter]
+    public RenderFragment Actions { get; set; }
+
+    private string CardBackgroundColor => string.IsNullOrWhiteSpace(ImageBgHslColor) ? null : $"--card-bg:hsl({ImageBgHslColor})";
+}

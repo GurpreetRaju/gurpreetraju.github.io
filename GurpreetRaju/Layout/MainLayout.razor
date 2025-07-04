@@ -1,72 +1,30 @@
-﻿@using MudBlazor
-@inherits LayoutComponentBase
+﻿@inherits LayoutComponentBase
 
-<MudThemeProvider @ref="_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
-<MudPopoverProvider />
-<MudSnackbarProvider />
-
-<PageTitle>@(_currentPage ?? "Home")</PageTitle>
-
-<MudLayout>
-    <MudDrawer @bind-Open="_drawerOpen" Elevation="2" Variant="@DrawerVariant.Mini">
-        <MudStack Class="mb-3 px-2">
-            <MudStack AlignItems="AlignItems.Center" Row="true" Spacing="0">
-                <MudIconButton Icon="@Icons.Material.Filled.Menu"
-                           Color="Color.Inherit"
-                           OnClick="@((e) => DrawerToggle())"/>
-                @if (_drawerOpen)
-                {
-                    <MudText>Gurpreet Raju</MudText>
-                }
-            </MudStack>
-            <MudAvatar Color="Color.Primary" Size="@(_drawerOpen ? Size.Large : Size.Medium)" Class="align-self-center my-picture">
-                <MudImage Src="https://avatars.githubusercontent.com/u/17093299" />
-            </MudAvatar>
-        </MudStack>
-        <NavMenu @bind-CurrentPage="_currentPage" />
-        <MudSpacer />
-        <div class="d-flex justify-center">
-            <MudToggleIconButton Toggled="_isDarkMode" ToggledChanged="HandleThemeChanged" Size="Size.Small"
-                                 Color="Color.Primary" Variant="Variant.Text"
-                                 Icon="@Icons.Material.Filled.LightMode"
-                                 ToggledIcon="@Icons.Material.Filled.DarkMode"
-                                 Class="ma-4" />
-        </div>
-    </MudDrawer>
-    <MudMainContent Class="pt-0">
-        <MudBreakpointProvider>
-            @Body
-        </MudBreakpointProvider>
-    </MudMainContent>
-</MudLayout>
+<ToastProvider />
+<div>
+    <AppBar BackgroundColor="Color.Primary">
+        <BrandContent>
+            <Text Typo="Typography.span" Class="brand">Gurpreet Raju</Text>
+        </BrandContent>
+        <ChildContent>
+            <div class="flex-grow-1" />
+            <NavMenu IsVertical="false">
+                <NavigationItems>
+                    <NavigationItem Url="/">Home</NavigationItem>
+                    <NavigationItem Url="/experience">Experience</NavigationItem>
+                    <NavigationItem Url="/projects">Projects</NavigationItem>
+                    <NavigationItem Url="/contact">Contact</NavigationItem>
+                </NavigationItems>
+            </NavMenu>
+            <ShineBlazor.Components.Theme.ThemeSelector Theme="_theme"  />
+        </ChildContent>
+    </AppBar>
+    <div class="content">
+        @Body
+    </div>
+    <Footer />
+</div>
 
 @code{
-    private bool _isDarkMode = false;
-    private bool _drawerOpen = true;
-
-    private GurpreetTheme _theme = new();
-    private MudThemeProvider _mudThemeProvider;
-
-    private string _currentPage; 
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            _isDarkMode = await _mudThemeProvider.GetSystemPreference();
-            await InvokeAsync(StateHasChanged);
-        }
-    }
-
-    void DrawerToggle()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
-
-    void HandleThemeChanged(bool isDark)
-    {
-        _isDarkMode = isDark;
-
-        InvokeAsync(StateHasChanged);
-    }
+    private GurpreetTheme _theme = new ();
 }

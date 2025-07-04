@@ -1,0 +1,45 @@
+﻿<div class="card-container">
+    <div class="card">
+        <div class="card-side card-front">
+            <Image Source="@Logo" Alt="@Institution" Class="institution-logo rounded-circle" />
+            <Text Typo="Typography.h5">@Title</Text>
+            <Text>@Major</Text>            
+            <Text Class="institute">@Institution</Text>
+        </div>
+        <div class="card-side card-back">
+            <Text Typo="Typography.h6">@BackTitle</Text>
+            <Text>@Years</Text>
+            @if (!string.IsNullOrEmpty(Gpa))
+            {
+                <p class="text"><i class="bi bi-mortarboard-fill"></i> @Gpa</p>
+            }
+            <Text><i class="bi bi-geo-alt-fill"></i> @Location</Text>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Logo { get; set; }
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string Institution { get; set; }
+
+    [Parameter]
+    public string Location { get; set; }
+
+    [Parameter]
+    public string Years { get; set; }
+
+    [Parameter]
+    public string BackTitle { get; set; } = "Details";
+
+    [Parameter]
+    public string Gpa { get; set; }
+
+    [Parameter]
+    public string Major { get; set; }
+}

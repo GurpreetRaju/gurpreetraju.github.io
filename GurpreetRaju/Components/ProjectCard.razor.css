@@ -1,0 +1,47 @@
+﻿.project-wrapper {
+    padding: 4rem 1rem;
+    border-radius: 2rem
+}
+
+.project-card {
+    --card-bg: #555;
+    background: var(--card-bg);
+    color: var(--bs-white);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.card-image {
+    background: var(--bs-white);
+    max-width: 80%;
+    width: 300px;
+    height: 180px;
+    border-radius: 1rem;
+    margin: -5rem auto 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+    .card-image .img-fluid {
+        max-height: 100%;
+        padding: 1rem;
+    }
+
+.project-card ::deep .chip {
+    background: rgba(0,0,0, 0.15);
+}
+
+.project-card ::deep .links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+    .project-card ::deep .links a {
+        text-decoration: none;
+        color: var(--bs-dark);
+        background: var(--bs-white);
+        padding: 0.5rem 1rem;
+    }

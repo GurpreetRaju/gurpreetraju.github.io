@@ -1,0 +1,57 @@
+﻿@inherits InputControlBase<string>
+
+@if (string.IsNullOrEmpty(Label))
+{
+    @RenderControl
+}
+else
+{
+    @Extensions.RenderFormControlContainer(Id, Label, Variant, RenderControl)
+}
+
+@code {
+    /// <summary>
+    /// The label.
+    /// </summary>
+    [Parameter]
+    public string Label { get; set; }
+
+    /// <summary>
+    /// The placeholder.
+    /// </summary>
+    [Parameter]
+    public string Placeholder { get; set; }
+
+    /// <summary>
+    /// The input variant.
+    /// </summary>
+    [Parameter]
+    public InputVariant Variant { get; set; }
+
+    /// <summary>
+    /// The number of rows for the text area.
+    /// </summary>
+    [Parameter]
+    public int Rows { get; set; } = 3;
+
+    /// <inheritdoc/>
+    protected override string ComponentName => "form-control";
+
+    /// <summary>
+    /// Renders text area.
+    /// </summary>
+    private RenderFragment RenderControl => __builder =>
+    {
+        <textarea value="@ValueAsString"
+                  required="@Required"
+                  disabled="@Disabled"
+                  class="@CssClasses"
+                  style="@CssStyles"
+                  readonly="@ReadOnly"
+                  placeholder="@Placeholder"
+                  rows="@Rows"
+                  id="@Id"
+                  @onchange="(args) => HandleValueChanged(args.Value)"
+                  @attributes="AdditionalAttributes" />
+    };
+}

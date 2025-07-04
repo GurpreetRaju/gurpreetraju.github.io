@@ -17,6 +17,10 @@
     filter: grayscale(100%);
 }
 
+.bounce {
+    animation: bounce 2s infinite;
+}
+
 /* Size - Increase */
 @-moz-keyframes zoom-in {
     100% {
@@ -54,5 +58,16 @@
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
+    }
+}
+
+/* Bounce */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
     }
 }

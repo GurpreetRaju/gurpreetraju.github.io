@@ -1,0 +1,52 @@
+﻿@page "/contact"
+@inject IJSRuntime JS
+
+<div class="social">
+    <Text Typo="Typography.h6" Class="section-intro">
+        You can explore some of my freelance and academic projects on my GitHub account.
+    </Text>
+    <div class="social-icons">
+        <a href="https://facebook.com/gurpreet.r.93" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/gurpreetraju/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/GurpreetRaju" target="_blank"><i class="bi bi-github"></i></a>
+    </div>
+    <Text Class="section-intro">
+        I'm always excited about collaborating with talented and creative professionals. Let's join forces, leverage our knowledge and skills,
+        and create something truly wonderful together.
+    </Text>
+</div>
+<Card>
+    <CardHeader>Contact Me</CardHeader>
+    <CardBody>
+        @if (_success)
+        {
+            <Alert Color="Color.Success">Your message was sent successfully!</Alert>
+        }
+        else if (!string.IsNullOrEmpty(_errorMessage))
+        {
+            <Alert Color="Color.Danger">@_errorMessage</Alert>
+        }
+
+        <EditForm Model="_formModel" OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <div class="row">
+                <div class="col d-flex flex-column gap-3">
+                    <InputControl Label="Name" Variant="InputVariant.Floating" @bind-Value="_formModel.Name" />
+                    <InputControl Label="Email" Variant="InputVariant.Floating" @bind-Value="_formModel.Email" />
+                    <InputControl Label="Phone" Variant="InputVariant.Floating" @bind-Value="_formModel.Phone" />
+                </div>
+                <div class="col full-height-text-area">
+                    <TextareaControl Label="Message"
+                                     Variant="InputVariant.Floating"
+                                     @bind-Value="_formModel.Message" />
+                </div>
+            </div>
+            <div class="d-flex mt-3 align-center justify-content-center">
+                <div class="g-recaptcha" data-sitekey="@SiteKey"></div>
+                <Button Variant="Variant.Filled" Color="Color.Primary" ButtonType="ButtonType.Submit">
+                    Send Message
+                </Button>
+            </div>
+        </EditForm>
+    </CardBody>
+</Card>

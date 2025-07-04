@@ -1,0 +1,33 @@
+[
+  {
+    "image": "https://raw.githubusercontent.com/GurpreetRaju/ShineBlazorComponents/main/ShineBlazor.Components.Demo/wwwroot/images/shine.png",
+    "name": "ShineBlazorComponents",
+    "demoUrl": "https://gurpreetraju.github.io/ShineBlazorComponents/",
+    "gitHubUrl": "https://github.com/GurpreetRaju/ShineBlazorComponents",
+    "skills": [ "Blazor", ".NET", "C#", "JavaScript", "Bootstrap", "HTML5/CSS3" ],
+    "hue": 220,
+    "key-features": [
+      "Fully responsive and accessible Blazor components",
+      "Smooth CSS animations and transitions",
+      "Simple integration and extensibility",
+      "Designed with modern UI/UX principles",
+      "Source code available and open for contributions"
+    ]
+  },
+  {
+    "image": "https://png.pngtree.com/png-clipart/20221014/ourmid/pngtree-avocado-cartoon-png-image_6324941.png",
+    "name": "ShineGuacamole",
+    "gitHubUrl": "https://github.com/GurpreetRaju/ShineGuacamole",
+    "skills": [ "Blazor", "ASP.NET Core", "SQL Server", "Apache Guacamole", "HTML5/CSS3" ],
+    "hue": 154,
+    "key-features": [
+      "Reusable Blazor components for rapid development",
+      "Clean, modern, and animated UI elements",
+      "Fully responsive and mobile-friendly",
+      "Customizable styles and themes",
+      "Lightweight and optimized for performance",
+      "Easy integration into existing Blazor apps",
+      "Open-source with clear documentation"
+    ]
+  }
+]

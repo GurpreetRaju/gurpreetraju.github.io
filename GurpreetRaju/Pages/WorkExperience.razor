@@ -1,0 +1,95 @@
+﻿@page "/experience"
+@using GurpreetRaju.Models
+
+<Text Typo="Typography.h1">Experience</Text>
+<Text Typo="Typography.p" Class="section-intro">
+    Throughout my career, I've successfully delivered a variety of projects, showcasing my creativity and strong problem-solving skills.
+</Text>
+<Card Class="full-height">
+    <CardBody>
+        <div class="row g-0">
+            <div class="col-sm-5 list">
+                @foreach (var job in _experiences)
+                {
+                    <div class="@(string.Join(" ", "list-item", job == _selectedJob ? "selected" : string.Empty))" @onclick="() => ShowDetails(job)">
+                        <div class="row">
+                            @if (!string.IsNullOrEmpty(job.Logo))
+                            {
+                                <div class="col-2 job-logo">
+                                    <img src="@job.Logo" alt="@job.Company" class="img-fluid bounce rounded-circle" />
+                                </div>
+                            }
+                            <div class="col">
+                                <Text Typo="Typography.h6">@job.Company</Text>
+                                <Text>@job.Location</Text>
+
+                                @foreach (var role in job.Roles ?? [])
+                                {
+                                    <div class="job-title">
+                                        <Text Typo="Typography.h6">@role.Title</Text>
+                                        <div>
+                                            <span class="duration">@role.From</span>
+                                            @if (!string.IsNullOrEmpty(role.To))
+                                            {
+                                                <span class="duration"> - @role.To</span>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-sm-7 details">
+                <div class="details-content" id="details-content">
+                    <Text Typo="Typography.h6">Responsibilities</Text>
+                    <ul>
+                        @foreach (var resposibility in _selectedJob?.Responsibilities ?? [])
+                        {
+                            <li>@resposibility</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </CardBody>
+</Card>
+
+@code {
+    private Experience[] _experiences = [];
+    private Experience _selectedJob;
+
+    /// <summary>
+    /// Load the jobs.
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        var assembly = typeof(WorkExperience).Assembly;
+        var resourceName = assembly.GetManifestResourceNames()
+            .FirstOrDefault(n => n.EndsWith("Resources.Experience.json"));
+
+        if (resourceName is not null)
+        {
+            using var stream = assembly.GetManifestResourceStream(resourceName);
+            if (stream is not null)
+            {
+                _experiences = System.Text.Json.JsonSerializer.Deserialize<Experience[]>(stream) ?? [];
+                _selectedJob = _experiences.FirstOrDefault();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Show the details of the selected job.
+    /// </summary>
+    /// <param name="job"></param>
+    private void ShowDetails(Experience job)
+    {
+        _selectedJob = job;
+
+        InvokeAsync(StateHasChanged);
+    }
+}

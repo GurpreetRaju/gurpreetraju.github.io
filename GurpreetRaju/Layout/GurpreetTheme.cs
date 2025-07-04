@@ -1,47 +1,71 @@
-﻿using MudBlazor;
+﻿using ShineBlazor.Components.Theme;
 
 namespace GurpreetRaju.Layout
 {
     /// <summary>
-    /// Custom theme.
+    /// Shine Theme.
     /// </summary>
-    public class GurpreetTheme : MudTheme
+    public class GurpreetTheme : DefaultTheme
     {
-        
-        public GurpreetTheme() 
+        public GurpreetTheme()
         {
-            PaletteLight = new PaletteLight()
-            {
-                PrimaryContrastText = Colors.Shades.White,
-                Primary = Colors.Teal.Default,
-                TextPrimary = Colors.Shades.Black,
-                Secondary = Colors.Teal.Accent3,
-                TextSecondary = Colors.Shades.White,
-                AppbarBackground = Colors.Teal.Lighten1,
-                AppbarText = Colors.Teal.Darken4,
-                DrawerBackground = Colors.Teal.Lighten1,
-                DrawerText = Colors.Teal.Darken4,
-                DrawerIcon = Colors.Teal.Darken4,
-                Background = Colors.Teal.Lighten5,
-                HoverOpacity = 0.32
-            };
-            PaletteDark = new PaletteDark()
-            {
-                PrimaryContrastText = Colors.Shades.White,
-                Primary = Colors.Teal.Default,
-                Secondary = Colors.Teal.Accent3,
-                TextSecondary = Colors.Shades.White,
-                AppbarBackground = Colors.Teal.Darken4,
-                AppbarText = Colors.Shades.White,
-                DrawerBackground = Colors.Teal.Darken4,
-                DrawerText = Colors.Shades.White
-            };
+            Light = new LightPalette();
+            Dark = new DarkPalette();
+        }
+    }
 
-            LayoutProperties = new LayoutProperties()
+    /// <summary>
+    /// The light palette.
+    /// </summary>
+    public class LightPalette : Palette
+    {
+        /// <summary>
+        /// Initializes the light palette.
+        /// </summary>
+        public LightPalette()
+        {
+            Primary = new ThemeColorSet
             {
-                DrawerWidthLeft = "260px",
-                DrawerWidthRight = "300px",                
+                Color = "#26a69a",
+                Rgb = "38, 166, 154",
+                BackgroundSubtle = "#386cbc",
+                Border = "#186e66"
             };
+            Secondary = new ThemeColorSet
+            {
+                Color = "#FF5666",
+                Rgb = "255, 86, 102",
+            };
+            TertiaryBackgroundHex = "#4f359b";
+            TertiaryColorRgb = "#FFF";
+            TertiaryBackgroundRgb = "79, 53, 155";
+        }
+    }
+
+    /// <summary>
+    /// The light palette.
+    /// </summary>
+    public class DarkPalette : Palette
+    {
+        /// <summary>
+        /// Initializes the dark palette.
+        /// </summary>
+        public DarkPalette()
+        {
+            Primary = new ThemeColorSet
+            {
+                Color = "#26a69a",
+                Rgb = "38, 166, 154",
+                BackgroundSubtle = "#08539e"
+            };
+            Secondary = new ThemeColorSet
+            {
+                Color = "#FF5666",
+                Rgb = "255, 86, 102",
+            };
+            TertiaryBackgroundHex = "#4f359b";
+            TertiaryColorRgb = "#FFF";
+            TertiaryBackgroundRgb = "79, 53, 155";
         }
     }
 }

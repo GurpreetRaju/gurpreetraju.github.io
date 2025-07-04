@@ -1,0 +1,54 @@
+﻿@page "/projects"
+@using GurpreetRaju.Models
+@using GurpreetRaju.Service
+
+<Text Typo="Typography.h1">Projects</Text>
+<Text Typo="Typography.p" Class="section-intro">
+    In my free time, I like to scratch the code. 
+</Text>
+<div class="row">
+    @foreach (var project in _projectList)
+    {
+        <div class="col-4">
+            <ProjectCard Image="@project.Image" 
+                Title="@project.Name" 
+                Skills="@project.Skills" 
+                ImageBgHslColor="@($"{project.Hue},90%,40%")">
+                <Actions>
+                    <a class="link glow-border" href="@project.GitHubUrl" target="_blank">GitHub</a>
+                    @if (!string.IsNullOrEmpty(project.DemoUrl))
+                    {
+                        <a class="link glow-border" href="@project.DemoUrl" target="_blank">Demo</a>
+                    }
+                </Actions>
+            </ProjectCard>
+        </div>
+    }
+</div>
+
+@code {
+    public record Experience(string Title, string Company, string Location, string Duration);
+    private ProjectModel[] _projectList;
+
+    /// <summary>
+    /// Load the jobs.
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        var assembly = typeof(WorkExperience).Assembly;
+        var resourceName = assembly.GetManifestResourceNames()
+            .FirstOrDefault(n => n.EndsWith("Resources.Projects.json"));
+
+        if (resourceName is not null)
+        {
+            using var stream = assembly.GetManifestResourceStream(resourceName);
+            if (stream is not null)
+            {
+                _projectList = System.Text.Json.JsonSerializer.Deserialize<ProjectModel[]>(stream) ?? [];
+            }
+        }
+    }
+
+}

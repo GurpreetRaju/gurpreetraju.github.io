@@ -1,0 +1,103 @@
+﻿.job-logo {
+    align-items: center;
+}
+
+.job-roles {
+    align-items: center;
+    justify-content: center;
+}
+
+.job-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    gap: 6px;
+    position: relative;
+    padding-left: 1.25rem;
+    border-left: 2px solid #777;
+}
+
+    .job-title::before {
+        position: absolute;
+        top: 0.5rem;
+        left: -0.4rem;
+        content: "\A";
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background: #007BFF;
+        outline: 2px solid #fff;
+    }
+
+    .job-title ::deep * {
+        margin: 0;
+        padding: 2px 0;
+    }
+
+    .job-title ::deep .duration {
+        font-weight: 100;
+    }
+
+.list {
+    border-right: 1px solid #ccc;
+}
+
+.list-item {
+    --bg-hover-color: var(--bs-body-color-rgb);
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-bottom-color: #eee;
+    cursor: pointer;
+    position: relative;
+}
+
+    .list-item:hover {
+        background: rgba(var(--bg-hover-color), 0.15);
+    }
+
+    .list-item.selected {
+        background: rgba(var(--bg-hover-color), 0.15);
+        box-shadow: 0 0 8px 0 inset rgb(var(--bg-hover-color), 0.1);
+        border-image: var(--rgba-border);
+        animation: var(--glowing-border-animation);
+    }
+
+        .list-item.selected::before {
+            content: '';
+            position: absolute;
+            right: -2px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid rgb(var(--bs-body-bg-rgb));
+        }
+
+.details {
+    padding: 2rem;
+}
+
+    .details h2 {
+        margin: 0 0 1rem;
+    }
+
+.property {
+    display: flex;
+    padding: 0.5rem 0;
+}
+
+    .property label {
+        width: 150px;
+        font-weight: bold;
+    }
+
+.color-box {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #000;
+    margin-left: 0.5rem;
+}

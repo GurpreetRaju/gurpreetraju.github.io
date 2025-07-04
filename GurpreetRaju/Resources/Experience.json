@@ -1,0 +1,113 @@
+[
+  {
+    "roles": [
+      {
+        "title": "Senior Software Developer",
+        "from": "Aug 2024",
+        "to": "Present"
+      },
+      {
+        "title": "Intermediate Software Developer",
+        "from": "Oct 2020",
+        "to": "Aug 2024"
+      },
+      {
+        "title": "Junior Software Developer",
+        "from": "Jan 2019",
+        "to": "Sep 2020"
+      }
+    ],
+    "logo": "images/peergroup_logo.png",
+    "company": "The PEER Group Inc.",
+    "location": "Kitchener, ON",
+    "responsibilities": [
+      "Worked on ASP.Net Blazor server application that runs in containers on Azure Cloud. Integrated Entra ID, added docker support and implemented services that interact with a data broker using gRPC. Involved in requirement gathering, design, development and testing phases.",
+      "Worked on a MES system written in ASP.NET, Blazor UI, gRPC and SQL for tracking substrates and schedule analysis etc.",
+      "Worked on SEMI tool automation software (PTO/EIB) written in .NET Framwework, WPF and WCF, Blazor, gRPC. Implemented new WPF UIs and WCF services to interact with the back end server. Supported complex process flow scheduling in the tool.",
+      "Travelled to customer sites for software integration.",
+      "Worked on timekeeping project written in Angular, ASP.NET and SQL.",
+      "Gathered customer requirements and transformed into functional specification.",
+      "Provided support to customer for triaging issues.",
+      "Mentored new team members and performed code reviews for peers."
+    ]
+  },
+  {
+    "roles": [
+      {
+        "title": "Quality Assurance Analyst",
+        "from": "Mar 2018",
+        "to": "Dec 2018"
+      }
+    ],
+    "logo": "images/ncr_logo.png",
+    "company": "NCR Corporation",
+    "location": "Waterloo, ON",
+    "responsibilities": [
+      "Develop and maintain web interface for database using Java and Angular JS.",
+      "Maintain MariaDB database and write SQL procedures.",
+      "Maintain Testing application.",
+      "Execute test plans for routine and non-routine analyses of ATM",
+      "Modify and extract data by running SQL queries and procedures using MySQL workbench for daily updates",
+      "Compile test results, compare them to established specifications and control limits and make recommendations on appropriate test procedures for further testing",
+      "Collect documentation needed to support testing procedures including data capture forms, equipment logbooks and inventory forms as per the company standards",
+      "Calibrate and record complex components for reliability, engineering and stress tests"
+    ]
+  },
+  {
+    "roles": [
+      {
+        "title": "Customer Service Representative",
+        "from": "May 2017",
+        "to": "Feb 2018"
+      }
+    ],
+    "logo": "images/tim_logo.png",
+    "company": "Tim Hortons STL",
+    "location": "Montreal, QC",
+    "responsibilities": [
+      "Provided fast, friendly, and accurate customer service in a high-volume environment",
+      "Prepared and served coffee, beverages, and food items following company standards",
+      "Maintained cleanliness and organization of the front counter, dining area, and kitchen.",
+      "Followed food safety and hygiene protocols to ensure quality and compliance",
+      "Worked collaboratively with team members to meet peak hour demands"
+    ]
+  },
+  {
+    "roles": [
+      {
+        "title": "Freelance Developer",
+        "from": "Jun 2014",
+        "to": "Nov 2015"
+      }
+    ],
+    "logo": "images/freel_logo.png",
+    "company": "",
+    "location": "Nawanshahr, Punjab, India",
+    "responsibilities": [
+      "Developing custom web and desktop applications using PHP, Java, HTML/CSS",
+      "Perform unit testing(JUnit), cross platform testing",
+      "Designing Google Banner Ads with Photoshop CS5",
+      "Maintain and build clean and reusable Java code",
+      "Enhance UI with HTML/CSS, Jquery and javascript"
+    ]
+  },
+  {
+    "roles": [
+      {
+        "title": "Web Developer Internship",
+        "from": "Sept 2013",
+        "to": "Dec 2013"
+      }
+    ],
+    "logo": "images/mesh_logo.png",
+    "company": "Meshcron Technologies P. Ltd",
+    "location": "Chandigarh Area, India",
+    "responsibilities": [
+      "Designing front ends with HTML/CSS, JQuery, JavaScript",
+      "Front end to Back end development (Wordpress, PHP, JSP, Java Servlets)",
+      "Customizing existing websites.",
+      "Managing MySQL Databases.",
+      "Designing Google Ads"
+    ]
+  }
+]

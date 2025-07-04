@@ -1,44 +1,92 @@
 ﻿@page "/"
 
-<MyPage Title="Home">
-    <MudCard>
-        <MudCardHeader>
-            <MudText Typo="Typo.h5"><MudIcon Icon="@Icons.Material.Filled.PermIdentity" Class="mr-3" Size="Size.Small" />About</MudText>
-        </MudCardHeader>
-        <MudCardContent>
-            <MudText>Greetings! I'm a technology enthusiast with over 7 years of hands-on experience in software development. Throughout my career, I've successfully delivered a variety of projects, showcasing my creativity and strong problem-solving skills.</MudText>
-            <MudText>I thrive on challenges and stay at the forefront of technology. My skill set includes a range of technologies and frameworks, such as C#, .NET, Blazor, ASP.Net, gRPC, Angular, JavaScript, HTML, Java, and CSS. I'm well-versed in software design methodologies, design patterns, and comfortable working across Linux, Unix, and Windows platforms. My proficiency extends to Kubernetes, Docker, Redis, Kafka, Git and REST API.</MudText>
-            <MudText>You can explore some of my freelance and academic projects on my <MudLink Href="https://www.github.com/gurpreetraju">GitHub account</MudLink>.</MudText>
-            <MudText>I'm always excited about collaborating with talented and creative professionals. Let's join forces, leverage our knowledge and skills, and create something truly wonderful together.</MudText>
-        </MudCardContent>
-    </MudCard>
-    <MudCard Class="mt-3">
-        <MudCardHeader>
-            <MudText Typo="Typo.h5"><MudIcon Icon="@Icons.Material.Filled.Build" Class="mr-3" Size="Size.Small"/>Technical Skills</MudText>
-        </MudCardHeader>
-        <MudCardContent>
-            <MudStack Row="true" Wrap="Wrap.Wrap">
-                <SkillCard Image="images/Skills/logo_net_core.png" Skill=".Net" />
-                <SkillCard Image="images/Skills/logo_asp.png" Skill="ASP.Net" />
-                <SkillCard Image="images/Skills/logo_c_sharp.png" Skill="C#" />
-                <SkillCard Image="images/Skills/logo_blazor.png" Skill="Blazor" />
-                <SkillCard Image="images/Skills/logo_angular.png" Skill="Angular" />
-                <SkillCard Image="images/Skills/logo_js.png" Skill="JavaScript" />
-                <SkillCard Image="images/Skills/logo_sql.png" Skill="SQL" />
-                <SkillCard Image="images/Skills/logo_azure.png" Skill="Azure" />
-                <SkillCard Image="images/Skills/logo_docker.png" Skill="Docker" />
-                <SkillCard Image="images/Skills/logo_kubernetes.png" Skill="Kubernetes" />
-            </MudStack>
-            <MudChipSet T="string" Class="mt-3">
-                @foreach (var skill in Skills)
-                {
-                    <MudChip Color="Color.Primary" Variant="Variant.Filled">@skill</MudChip>
-                }
-            </MudChipSet>
-        </MudCardContent>
-    </MudCard>
-</MyPage>
+<div class="intro-wrapper">
+    <div class="my-image">
+        <img src="images/me.jpg" class="rounded-circle" alt="GurpreetRaju"/>
+    </div>
+    <Text Typo="Typography.h1" Class="introduction">Hi, I am Gurpreet.</Text>
+    <Text Typo="Typography.p" Class="section-intro">I'm a technology enthusiast with over 7 years of hands-on experience in software development.</Text>
+</div>
+
+<Card>
+    <CardHeader>Skills</CardHeader>
+    <CardBody>
+        <Text Typo="Typography.p" Class="section-intro">
+            I thrive on challenges and stay at the forefront of technology. My skill set includes a range of technologies and frameworks.
+        </Text>
+        <div class="skills-grid">
+            @foreach (var skill in Skills)
+            {
+                <div class="skill-item">
+                    <img src="images/skills/@skill.Image" alt="@skill.Name" class="skill-icon" />
+                    <Text Class="skill-label">@skill.Name</Text>
+                </div>
+            }
+        </div>
+        <Text Class="section-intro">
+            My proficiency extends to the following:
+        </Text>
+        <div class="soft-skills">
+            @foreach (var softSkill in SoftSkills)
+            {
+                <div class="soft-skill-pill">@softSkill</div>
+            }
+        </div>
+    </CardBody>
+</Card>
+
+<Card>
+    <CardHeader>Education</CardHeader>
+    <CardBody Class="education-section">
+        <FlipCard Logo="images/concordia_logo.png"
+                  Title="Master of Engineering"
+                  Institution="Concordia University"
+                  Location="Montreal, QC, Canada"
+                  Years="2016 - 2017"
+                  Gpa="3.45"
+                  Major="Software Engineering" />
+        <FlipCard Logo="images/gndec_logo.png"
+                  Title="Bachelor of Technology"
+                  Institution="Guru Nanak Dev Engineering College"
+                  Location="Ludhiana, India"
+                  Years="2010 - 2014"
+                  Gpa="3.0"
+                  Major="Computer Science" />
+        <FlipCard Logo="images/gnm_logo.jpg"
+                  Title="Higher Secondary Education"
+                  Institution="Guru Nanak Mission Public Sen. Sec. School"
+                  Location="Dhahan Kaleran, Punjab, India"
+                  Years="2010"
+                  Major="Non-Medical" />
+    </CardBody>
+</Card>
 
 @code {
-    private string[] Skills = ["Problem-Solving", "Design Patterns", "HTML", "CSS", "REST", "GIT", "gRPC", "Linux", "Windows"];
+    private (string Name, string Image)[] Skills = [
+        (".NET", "logo_net_core.png"),
+        ("ASP.Net", "logo_asp.png"),
+        ("C#", "logo_c_sharp.png"),
+        ("Blazor", "logo_blazor.png"),
+        ("Angular", "logo_angular.png"),
+        ("JavaScript", "logo_js.png"),
+        ("SQL", "logo_sql.png"),
+        ("Azure", "logo_azure.png"),
+        ("Docker", "logo_docker.png"),
+        ("Kubernetes", "logo_kubernetes.png")
+    ];
+
+    private string[] SoftSkills = [
+        "HTML",
+        "CSS",
+        "GIT",
+        "gRPC",
+        "Redis",
+        "Kafka",
+        "REST API",
+        "Linux",
+        "Windows",
+        "Design Patterns",
+        "Problem Solving",
+        "Team Player",
+    ];
 }

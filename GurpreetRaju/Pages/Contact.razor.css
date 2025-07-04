@@ -1,0 +1,22 @@
+﻿
+.full-height-text-area ::deep .form-floating, 
+.full-height-text-area ::deep .form-floating .form-control {
+    height: 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+    .social-icons a {
+        color: var(--bs-body-text);
+        font-size: 2rem;
+        text-decoration: none;
+        transition: transform 0.3s, color 0.3s;
+    }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }

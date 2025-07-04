@@ -1,14 +1,16 @@
+using GurpreetRaju;
+using GurpreetRaju.Service;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using GurpreetRaju;
-using MudBlazor.Services;
+using ShineBlazor.Components.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
+builder.Services.AddScoped<ToastService>();
+builder.Services.AddScoped<CaptchaService>();
 
-builder.Services.AddMudServices();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 await builder.Build().RunAsync();
