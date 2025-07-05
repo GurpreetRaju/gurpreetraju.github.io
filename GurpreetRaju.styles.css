@@ -122,6 +122,11 @@
     }
 /* /Layout/MainLayout.razor.rz.scp.css */
 
+.layout-wrapper[b-uwgp7rlc98]  .navbar {
+    margin: 1rem;
+    align-content: center;
+    border-radius: 1rem;
+}
 /* /Pages/Contact.razor.rz.scp.css */
 
 .full-height-text-area[b-yd568ub3b3]  .form-floating, 
