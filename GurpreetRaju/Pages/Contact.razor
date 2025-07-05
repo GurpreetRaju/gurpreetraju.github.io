@@ -1,4 +1,5 @@
 ﻿@page "/contact"
+
 @inject IJSRuntime JS
 
 <div class="social">
@@ -26,27 +27,33 @@
         {
             <Alert Color="Color.Danger">@_errorMessage</Alert>
         }
-
-        <EditForm Model="_formModel" OnValidSubmit="HandleValidSubmit">
-            <DataAnnotationsValidator />
+        <form action="@FormId" method="POST">
             <div class="row">
                 <div class="col d-flex flex-column gap-3">
-                    <InputControl Label="Name" Variant="InputVariant.Floating" @bind-Value="_formModel.Name" />
-                    <InputControl Label="Email" Variant="InputVariant.Floating" @bind-Value="_formModel.Email" />
-                    <InputControl Label="Phone" Variant="InputVariant.Floating" @bind-Value="_formModel.Phone" />
+                    <InputControl Label="Name"
+                                  Variant="InputVariant.Floating"
+                                  Required="true"
+                                  @bind-Value="_formModel.Name" />
+                    <InputControl Label="Email" type="email"
+                                  Variant="InputVariant.Floating"
+                                  Required="true"
+                                  @bind-Value="_formModel.Email" />
+                    <InputControl Label="Phone" 
+                        Variant="InputVariant.Floating" 
+                        @bind-Value="_formModel.Phone" />
                 </div>
                 <div class="col full-height-text-area">
-                    <TextareaControl Label="Message"
+                    <TextareaControl Label="Message" Required="true"
                                      Variant="InputVariant.Floating"
                                      @bind-Value="_formModel.Message" />
                 </div>
             </div>
-            <div class="d-flex mt-3 align-center justify-content-center">
-                <div class="g-recaptcha" data-sitekey="@SiteKey"></div>
+            <div class="d-flex mt-3 flex-column align-items-center gap-3">
+                <div @ref="_captchaContainer" id="recaptcha" class="g-recaptcha"></div>
                 <Button Variant="Variant.Filled" Color="Color.Primary" ButtonType="ButtonType.Submit">
                     Send Message
                 </Button>
             </div>
-        </EditForm>
+        </form>
     </CardBody>
 </Card>
