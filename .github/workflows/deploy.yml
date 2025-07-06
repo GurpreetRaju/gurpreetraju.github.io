@@ -10,10 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy
 
-    env:
-      CAPTCHA_KEY: ${{ secrets.CAPTCHA_KEY }}
-      CONTACT_FORM_ID: ${{ secrets.CONTACT_FORM_ID }}
-
     steps:
     - uses: actions/checkout@v3
 
@@ -27,14 +23,6 @@ jobs:
 
     - name: Copy index.html to 404.html
       run: cp release/wwwroot/index.html release/wwwroot/404.html
-
-    - name: Generate appsettings.json
-      run: |
-        mkdir -p release/wwwroot
-        echo '{' > release/wwwroot/appsettings.json
-        echo "  \"CAPTCHA_KEY\": \"${CAPTCHA_KEY}\"," >> release/wwwroot/appsettings.json
-        echo "  \"CONTACT_FORM_ID\": \"${CONTACT_FORM_ID}\"" >> release/wwwroot/appsettings.json
-        echo '}' >> release/wwwroot/appsettings.json
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
